@@ -1,3 +1,6 @@
-const test = 10;
+function sumRange(num: number): number {
+  if (num === 1) return 1;
+  return num + sumRange(num - 1);
+}
 
-console.log(test);
+sumRange(3);
