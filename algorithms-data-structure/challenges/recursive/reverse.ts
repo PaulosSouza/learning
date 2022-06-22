@@ -21,5 +21,3 @@ export function reverse(input: string): string {
 
   return arrLength.join("");
 }
-
-console.log(reverse("awesome"));
