@@ -17,5 +17,3 @@ export function someRecursive(
 
   return valueReturned;
 }
-
-console.log(someRecursive([1, 1, 3, 2, 1], (val) => val % 2 === 0));
