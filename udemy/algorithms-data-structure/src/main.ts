@@ -1,22 +1,42 @@
-import fs from "fs";
+import fs, { Dirent } from "fs";
 import path from "path";
 
-interface Folders {
-  [key: string]: string;
+const foldersToIgnore: string[] = [".vscode", "src", "node_modules"];
+
+const rootPath = path.join(__dirname, "..");
+const rootFilesAndDirs = fs.readdirSync(rootPath, {
+  encoding: "utf-8",
+  withFileTypes: true,
+});
+
+function isPartOfIgnoredFolders(dir: Dirent): boolean {
+  return foldersToIgnore.includes(dir.name);
 }
 
-const challengesFolder: Folders = {
-  recursive: path.join(__dirname, "..", "challenges", "recursive"),
-};
-
-for (const folder in challengesFolder) {
-  const folderPath = challengesFolder[folder];
-
-  const files = fs.readdirSync(folderPath, "utf-8");
-
-  files.forEach((fileName) => {
-    const filePath = path.join(folderPath, fileName);
-
-    require(filePath);
+function readAllFilesFromDir(dirPath: string): void {
+  const dirReaded = fs.readdirSync(dirPath, {
+    encoding: "utf-8",
+    withFileTypes: true,
   });
+
+  for (const resource of dirReaded) {
+    const resourceFullPath = path.join(dirPath, resource.name);
+
+    if (resource.isDirectory()) {
+      readAllFilesFromDir(resourceFullPath);
+      continue;
+    }
+
+    require(resourceFullPath);
+  }
+}
+
+for (const fileAndDir of rootFilesAndDirs) {
+  if (!fileAndDir.isDirectory()) continue;
+
+  const shouldIgnore = isPartOfIgnoredFolders(fileAndDir);
+  if (shouldIgnore) continue;
+
+  const fullPath = path.join(__dirname, "..", fileAndDir.name);
+  readAllFilesFromDir(fullPath);
 }
