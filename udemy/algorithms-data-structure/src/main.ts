@@ -4,7 +4,7 @@ import path from "path";
 const foldersToIgnore: string[] = [".vscode", "src", "node_modules"];
 
 const rootPath = path.join(__dirname, "..");
-const rootFilesAndDirs = fs.readdirSync(rootPath, {
+const rootFilesOrDirs = fs.readdirSync(rootPath, {
   encoding: "utf-8",
   withFileTypes: true,
 });
@@ -31,12 +31,12 @@ function readAllFilesFromDir(dirPath: string): void {
   }
 }
 
-for (const fileAndDir of rootFilesAndDirs) {
-  if (!fileAndDir.isDirectory()) continue;
+for (const fileOrDir of rootFilesOrDirs) {
+  if (!fileOrDir.isDirectory()) continue;
 
-  const shouldIgnore = isPartOfIgnoredFolders(fileAndDir);
+  const shouldIgnore = isPartOfIgnoredFolders(fileOrDir);
   if (shouldIgnore) continue;
 
-  const fullPath = path.join(__dirname, "..", fileAndDir.name);
+  const fullPath = path.join(__dirname, "..", fileOrDir.name);
   readAllFilesFromDir(fullPath);
 }
