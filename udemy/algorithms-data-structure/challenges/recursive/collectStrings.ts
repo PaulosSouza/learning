@@ -40,4 +40,4 @@ const obj = {
   },
 };
 
-console.log(collectStrings(obj));
+// console.log(collectStrings(obj));

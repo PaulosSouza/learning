@@ -11,4 +11,5 @@ export function linearSearch(input: number[], itemSearchable: number): number {
   return -1;
 }
 
-linearSearch([10, 15, 20, 25, 30], 15);
+//const result = linearSearch([10, 15, 20, 25, 30], 60);
+//console.log(result);
