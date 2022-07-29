@@ -2,6 +2,7 @@ import fs, { Dirent } from "fs";
 import path from "path";
 
 const foldersToIgnore: string[] = [".vscode", "src", "node_modules"];
+const filesAccepted = ".ts";
 
 const rootPath = path.join(__dirname, "..");
 const rootFilesOrDirs = fs.readdirSync(rootPath, {
@@ -24,6 +25,12 @@ function readAllFilesFromDir(dirPath: string): void {
 
     if (resource.isDirectory()) {
       readAllFilesFromDir(resourceFullPath);
+      continue;
+    }
+
+    const isTypescriptFile = resourceFullPath.includes(filesAccepted);
+
+    if (!isTypescriptFile) {
       continue;
     }
 
