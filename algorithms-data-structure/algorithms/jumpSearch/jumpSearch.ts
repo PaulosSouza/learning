@@ -22,9 +22,9 @@ export function jumpSearch(arr: number[], item: number): number {
   return -1;
 }
 
-const arr = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610];
-const x = 55;
+//const arr = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610];
+//const x = 55;
 
-const index = jumpSearch(arr, x);
+// const index = jumpSearch(arr, x);
 
 // console.log(index);
