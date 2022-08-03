@@ -50,6 +50,6 @@ const item = 10;
 // const n = arr.length;
 // const result = binarySearchRecurive(arr, 0, n - 1, item);
 
-const result = binarySearchInteractive(arr, item);
+binarySearchInteractive(arr, item);
 
 // console.log(result);
