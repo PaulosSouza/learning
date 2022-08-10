@@ -1,4 +1,4 @@
-function interpolationSearch(
+export function interpolationSearch(
   arr: number[],
   lo: number,
   hi: number,
@@ -23,11 +23,11 @@ function interpolationSearch(
   return -1;
 }
 
-const arr = [10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47];
-
-const n = arr.length;
+// const arr = [10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47];
+//
+// const n = arr.length;
 
 // Element to be searched
-const x = 18;
-const index = interpolationSearch(arr, 0, n - 1, x);
-console.log(index);
+// const x = 18;
+// const index = interpolationSearch(arr, 0, n - 1, x);
+// console.log(index);
