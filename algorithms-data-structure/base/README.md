@@ -1,6 +1,6 @@
 # Algorithm's Name
 
-## Explanatior
+## Explanation
 
 ## Formula (if exists)
 
