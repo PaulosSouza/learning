@@ -1,13 +1,28 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
+	"log"
 
-    "example.com/greetings"
+	"example.com/greetings"
 )
 
 func main() {
-    // Get a greeting message and print it.
-    message := greetings.Hello("Gladys")
-    fmt.Println(message)
+
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0)
+
+	// message, err := greetings.Hello("Paulo")
+	// if err != nil {
+	//   log.Fatal(err)
+	// }
+
+	names := []string{"Gladys", "Samantha", "Darrin"}
+
+	messages, err := greetings.Hellos(names)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(messages)
 }
