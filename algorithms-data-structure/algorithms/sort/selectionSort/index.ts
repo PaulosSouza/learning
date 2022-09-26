@@ -24,7 +24,7 @@ export function printArray(arr: number[]) {
   arr.forEach((num) => console.log(num));
 }
 
-const unsortedArray = [64, 25, 12, 22, 11];
-const n = unsortedArray.length;
-selectionSort(unsortedArray, n);
-printArray(unsortedArray);
+// const unsortedArray = [64, 25, 12, 22, 11];
+// const n = unsortedArray.length;
+// selectionSort(unsortedArray, n);
+// printArray(unsortedArray);

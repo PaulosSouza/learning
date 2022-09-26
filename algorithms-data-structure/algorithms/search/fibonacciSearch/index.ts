@@ -47,9 +47,9 @@ export function fibMonaccianSearch(arr: number[], x: number, n: number) {
   return -1;
 }
 
-const arr = [10, 22, 35, 40, 45, 50, 80, 82, 85, 90, 100, 235];
-const length = arr.length;
-const x = 80;
-const indexFound = fibMonaccianSearch(arr, x, length);
+// const arr = [10, 22, 35, 40, 45, 50, 80, 82, 85, 90, 100, 235];
+// const length = arr.length;
+// const x = 80;
+// const indexFound = fibMonaccianSearch(arr, x, length);
 
-console.log(indexFound);
+// console.log(indexFound);

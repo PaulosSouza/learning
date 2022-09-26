@@ -19,7 +19,7 @@ export function bubbleSort(arr: number[], length: number): void {
   bubbleSort(arr, length - 1);
 }
 
-const arrNumbers = [64, 34, 25, 12, 22, 11, 90];
-bubbleSort(arrNumbers, arrNumbers.length);
+// const arrNumbers = [64, 34, 25, 12, 22, 11, 90];
+// bubbleSort(arrNumbers, arrNumbers.length);
 
-arrNumbers.forEach((number) => console.log(number));
+// arrNumbers.forEach((number) => console.log(number));
